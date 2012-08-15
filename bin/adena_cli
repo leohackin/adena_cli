@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+require "thor"
+
+class AdenaCli < Thor
+  
+  desc "start", "start server"
+  method_option :environment, :default => "development", :aliases => "-e", :desc => "which environment you want to start."
+  def start
+    $stdout.puts "Startando o server #{options[:environment]}"
+  end
+end
+
+AdenaCli.start
